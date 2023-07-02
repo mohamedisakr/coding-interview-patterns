@@ -83,6 +83,63 @@ class TestLongestSubstringKDistinct(TestCase):
         with self.assertRaises(TypeError):
             longest_substring_with_k_distinct(text, k)
 
+    # test cases from leetcode
+    # 395. Longest Substring with At Least K Repeating Characters
+    # https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
+    def test_leetcode_case_2(self):
+        text = "ababbc"
+        k = 2
+        actual = longest_substring_with_k_distinct(text, k)
+        self.assertEqual(actual, 5)
+
+    def test_leetcode_case_1(self):
+        text = "aaabb"
+        k = 3
+        actual = longest_substring_with_k_distinct(text, k)
+        self.assertEqual(actual, 5)
+
+    # test cases from geeksforgeeks
+    # Find the longest substring with k unique characters in a given string
+    # https://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/
+    def test_geeks_case_1(self):
+        text = "aabbcc"
+        k = 1
+        actual = longest_substring_with_k_distinct(text, k)
+        self.assertEqual(actual, 2)
+
+    def test_geeks_case_2(self):
+        text = "aabbcc"
+        k = 2
+        actual = longest_substring_with_k_distinct(text, k)
+        self.assertEqual(actual, 4)
+
+    def test_geeks_case_3(self):
+        text = "aabbcc"
+        k = 3
+        actual = longest_substring_with_k_distinct(text, k)
+        self.assertEqual(actual, 6)
+
+    # test cases from stackoverflow
+    # Longest Substring Containing K Distinct Characters
+    # https://stackoverflow.com/questions/69282557/longest-substring-containing-k-distinct-characters
+    def test_stackoverflow_case_1(self):
+        text = "bdbdbbd"
+        k = 2
+        actual = longest_substring_with_k_distinct(text, k)
+        self.assertEqual(actual, 7)
+
+    def test_stackoverflow_case_2(self):
+        text = "bcbdbdbbdcd"
+        k = 3
+        actual = longest_substring_with_k_distinct(text, k)
+        self.assertEqual(actual, 11)
+
+    def test_stackoverflow_case_3(self):
+        text = "abcbdbdbbdcdabd"
+        k = 5
+        actual = longest_substring_with_k_distinct(text, k)
+        self.assertEqual(actual, 15)
+
 
 if __name__ == "__main__":
     main()
