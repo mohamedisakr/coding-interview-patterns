@@ -1,34 +1,39 @@
 from unittest import TestCase, main
-from two_pointers.pair_with_target_sum import pair_with_target_sum
+from two_pointers.pair_with_target_sum import pair_with_target_sum_2_pointers
 
 
 class TestPairWithTargetSum(TestCase):
 
     def test_pair_with_target_sum_empty_array(self):
         with self.assertRaises(ValueError):
-            pair_with_target_sum([], 7)
+            pair_with_target_sum_2_pointers([], 7)
 
     def test_pair_with_target_sum_equal_first_last(self):
-        self.assertEqual(pair_with_target_sum([1, 2, 3, 4, 6], 7), [0, 4])
-        self.assertEqual(pair_with_target_sum([3, 5, 12, 17], 20), [0, 3])
+        self.assertEqual(pair_with_target_sum_2_pointers(
+            [1, 2, 3, 4, 6], 7), [0, 4])
+        self.assertEqual(pair_with_target_sum_2_pointers(
+            [3, 5, 12, 17], 20), [0, 3])
 
     def test_pair_with_target_sum_exists(self):
-        self.assertEqual(pair_with_target_sum([1, 2, 3, 4, 6], 6), [1, 3])
-        self.assertEqual(pair_with_target_sum([2, 5, 9, 11], 11), [0, 2])
-        self.assertEqual(pair_with_target_sum([4, 4], 8), [0, 1])
+        self.assertEqual(pair_with_target_sum_2_pointers(
+            [1, 2, 3, 4, 6], 6), [1, 3])
+        self.assertEqual(pair_with_target_sum_2_pointers(
+            [2, 5, 9, 11], 11), [0, 2])
+        self.assertEqual(pair_with_target_sum_2_pointers([4, 4], 8), [0, 1])
 
     def test_pair_with_target_sum_not_exists(self):
         # self.assertEqual(pair_with_target_sum([], 10), [-1, -1])
         with self.assertRaises(ValueError):
-            pair_with_target_sum([], 10)
+            pair_with_target_sum_2_pointers([], 10)
 
     def test_pair_with_target_sum_invalid_input(self):
         with self.assertRaises(TypeError):
-            pair_with_target_sum([1, 2, 3], "a")
+            pair_with_target_sum_2_pointers([1, 2, 3], "a")
             # self.assertEqual(pair_with_target_sum([1, 2, 3], "a"), [-1, -1])
 
     def test_pair_with_target_sum_float_input(self):
-        self.assertEqual(pair_with_target_sum([1.5, 2.5, 3.5], 4), [0, 1])
+        self.assertEqual(pair_with_target_sum_2_pointers(
+            [1.5, 2.5, 3.5], 4), [0, 1])
 
     # TODO
     '''

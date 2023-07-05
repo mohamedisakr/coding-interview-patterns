@@ -1,4 +1,4 @@
-def pair_with_target_sum(arr, target_sum):
+def pair_with_target_sum_2_pointers(arr, target_sum):
     # assert arr, "arr must not be empty"
     if not isinstance(target_sum, int):
         raise TypeError(f"{target_sum} must be an integer")
@@ -20,4 +20,22 @@ def pair_with_target_sum(arr, target_sum):
         else:
             end -= 1
 
+    return [-1, -1]
+
+
+def pair_with_target_sum_hashtable(arr, target_sum):
+    # assert arr, "arr must not be empty"
+    if not isinstance(target_sum, int):
+        raise TypeError(f"{target_sum} must be an integer")
+
+    if len(arr) == 0:
+        raise ValueError("arr must not be empty")
+
+    store = {}
+    for i, num in enumerate(arr):
+        diff = target_sum - num
+        if diff in store:
+            return [store[diff], i]
+        else:
+            store[arr[i]] = i
     return [-1, -1]
