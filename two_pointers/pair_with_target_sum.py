@@ -6,7 +6,6 @@ def pair_with_target_sum_2_pointers(arr, target_sum):
     if len(arr) == 0:
         raise ValueError("arr must not be empty")
 
-    # [1, 2, 3, 4, 6], 6), [1, 3]
     start, end = 0, len(arr) - 1
 
     while start < end:
@@ -15,7 +14,7 @@ def pair_with_target_sum_2_pointers(arr, target_sum):
         if current_sum == target_sum:
             return [start, end]
 
-        if current_sum < target_sum:
+        if target_sum > current_sum:
             start += 1
         else:
             end -= 1
