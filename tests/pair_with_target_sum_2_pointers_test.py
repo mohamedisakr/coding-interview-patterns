@@ -35,6 +35,28 @@ class TestPairWithTargetSum(TestCase):
         self.assertEqual(pair_with_target_sum_2_pointers(
             [1.5, 2.5, 3.5], 4), [0, 1])
 
+    # leetcode test cases
+    def test_pair_leetcode_1(self):
+        nums = [2, 3, 4]
+        target = 6
+        actual = pair_with_target_sum_2_pointers(nums, target)
+        expected = [0, 2]
+        self.assertEqual(actual, expected)
+
+    def test_pair_leetcode_2(self):
+        nums = [2, 7, 11, 15]
+        target = 9
+        actual = pair_with_target_sum_2_pointers(nums, target)
+        expected = [0, 1]
+        self.assertEqual(actual, expected)
+
+    def test_pair_leetcode_3(self):
+        nums = [3, 3]
+        target = 6
+        actual = pair_with_target_sum_2_pointers(nums, target)
+        expected = [0, 1]
+        self.assertEqual(actual, expected)
+
     # TODO
     '''
     def test_pair_with_target_sum_invalid_input_none_type(self):
