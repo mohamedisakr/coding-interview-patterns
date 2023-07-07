@@ -1,13 +1,15 @@
 class Node:
+    """ node for linked list
+    """
+
     def __init__(self, value, next=None):
         self.value = value
         self.next = next
 
-# Input: 1 -> 2 -> 3 -> 4 -> 5 -> null
-# Output: 3
-
 
 def find_middle(head):
+    """ find linked list middle node 
+    """
     slow = head
     fast = head
 
@@ -18,6 +20,7 @@ def find_middle(head):
     return slow
 
 
+'''
 def main():
     head = Node(1)
     head.next = Node(2)
@@ -35,3 +38,4 @@ def main():
 
 
 main()
+'''
